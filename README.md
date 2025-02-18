@@ -3,7 +3,23 @@ This project automates the software development lifecycle (SDLC) for a **full-st
 - **Continuous Integration (CI):** Automated builds, tests, and quality analysis.
 - **Continuous Deployment (CD):** Automatic deployment using Docker.
 
-**🛠 Technologies Used:**
+## Features
+✔️ Building and running **Spring Boot, Angular, and MySQL** applications in a **Docker container**.  
+✔️ Using **profiles in Spring Boot** for environment configuration.  
+✔️ Managing and tracking source code with **Git**, using **GitHub** as a hosting service.  
+✔️ Testing backend services with **Mockito and JUnit**.  
+✔️ Ensuring **code quality** with **SonarQube**.  
+✔️ Hosting **artifacts** using **Nexus 3**.  
+✔️ Adding a **Jenkins Webhook** to **GitHub** for automated triggers.  
+✔️ Implementing **Continuous Integration (CI)** and **automation** with a **Jenkins Pipeline**.  
+✔️ Achieving **Continuous Delivery (CD)** by creating a **Docker image** from the artifact hosted on **Nexus** and pushing it to **DockerHub**.  
+✔️ **Containerizing** Spring Boot, MySQL, and Angular applications with **Docker**.  
+✔️ Configuring **email notifications** for pipeline status updates.  
+✔️ **Monitoring** application performance with **Prometheus and Grafana** 📊.  
+
+**🛠 Architecture & Technologies Used:**
+The project follows a **containerized microservices architecture**, ensuring modularity, scalability, and automated deployment. The pipeline includes the following components:
+
 | Component        | Technology Used |
 |-----------------|----------------|
 | **Version Control** | Git & GitHub |
@@ -16,6 +32,15 @@ This project automates the software development lifecycle (SDLC) for a **full-st
 | **Monitoring** | Prometheus & Grafana |
 | **Virtualization** | Vagrant (Ubuntu) |
 
+## Pipeline Workflow
+1. **Code Management**: Developers push code to GitHub.
+2. **CI with Jenkins**: Jenkins fetches the latest code and runs automated tests.
+3. **SonarQube Analysis**: Code is analyzed for quality and security vulnerabilities.
+4. **Artifact Storage**: Nexus stores the compiled JAR files.
+5. **Docker Image Creation**: A Docker image is built and pushed to **DockerHub**.
+6. **Deployment**: Docker Compose starts containers for backend, frontend, and database.
+7. **Monitoring**: Prometheus collects performance metrics, visualized in Grafana.
+8. **Notifications**: Jenkins sends an email notification on build success/failure.
 ---
 
 ## **2️⃣ CI/CD Pipeline Workflow**
@@ -217,18 +242,3 @@ datasources:
 - **Email alerts:** Jenkins sends notifications about build failures & successes.
 - **Slack integration (optional):** Alerts can be pushed to a Slack channel.
 
----
-
-## **✅ Key Benefits**
-✔ **Fully Automated Deployment** – No manual intervention required.  
-✔ **Consistent Environments** – Docker ensures identical environments across dev, test, and prod.  
-✔ **Scalable & Secure** – Uses **SonarQube**, **Nexus**, and **Docker Hub** to ensure high code quality & artifact management.  
-✔ **Efficient Monitoring** – Grafana & Prometheus enable real-time insights into application performance.
-
----
-
-## **🚀 Next Steps**
-Would you like to:
-1. **Add security hardening** (SSL, OAuth)?
-2. **Enhance logging** with ELK Stack?
-3. **Improve rollback mechanisms** in Jenkins?
